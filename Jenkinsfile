@@ -3,12 +3,12 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven'
+        maven 'maven'
     }
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/harishbitcse82/MyMavenWebApp.git'
+                git 'https://github.com/jayakanthmn/ansible22.git'
             }
         }
         stage('Build') {
