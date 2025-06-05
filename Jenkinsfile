@@ -7,13 +7,13 @@ pipeline {
     }   // this has to be added only if you get an error saying UTF required is 8 but showing in ISO00009
 
     tools {
-        maven 'maven'  // Ensure this matches the name configured in Jenkins
+        maven 'Maven'  // Ensure this matches the name configured in Jenkins
         jdk 'jdk'
     }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/jayakanthmn/ansiblejaya.git'
+                git branch: 'master', url: 'https://github.com/jayakanthmn/ansible22.git'
             }
         }
 
@@ -39,4 +39,3 @@ pipeline {
     }
 
    }
-   
