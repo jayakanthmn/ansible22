@@ -22,6 +22,11 @@ pipeline {
                 sh 'mvn clean package'  // Run Maven build
             }
         }
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.war', fingerprint:true
+            }
+        }
 
 
         stage('Deploy') {
