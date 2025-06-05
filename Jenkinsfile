@@ -7,13 +7,12 @@ pipeline {
     }   // this has to be added only if you get an error saying UTF required is 8 but showing in ISO00009
 
     tools {
-        maven 'maven'  // Ensure this matches the name configured in Jenkins
-        jdk 'jdk'
+        maven 'Maven'  // Ensure this matches the name configured in Jenkins
     }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/jayakanthmn/ansible22.git'
+                git branch: 'master', url: 'https://github.com/Shaileshk-cloud/2ansible.git'
             }
         }
 
@@ -22,13 +21,12 @@ pipeline {
                 sh 'mvn clean package'  // Run Maven build
             }
         }
-        stage('Archive') {
+
+     stage('Archive') {
             steps {
                 archiveArtifacts artifacts: 'target/*.war', fingerprint:true
             }
         }
-
-
         stage('Deploy') {
             steps {
                sh 'mvn clean package'  
